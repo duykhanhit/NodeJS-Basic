@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('layout/head'); %>
+    <title>Danh sách tài khoản</title>
+</head>
+<body>
+    <%- include('layout/nav'); %>
+
+    <div class="container">
+        <h2>Users</h2>            
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Email</th>
+              <th>First name</th>
+              <th>Last name</th>
+              <th>Create time</th>
+              <th>Update time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if(data && data.users) {%>
+                <% for(var i = 0; i < data.users.length; i++) {%>
+                <tr>
+                    <td> <%= data.users[i].id %> </td>
+                    <td> <%= data.users[i].email %> </td>
+                    <td> <%= data.users[i].first_name %> </td>
+                    <td> <%= data.users[i].last_name %> </td>
+                    <td> <%= data.users[i].created_at %> </td>
+                    <td> <%= data.users[i].updated_at %> </td>
+                </tr>
+                <%}%>
+            <%}%>
+          </tbody>
+        </table>
+      </div>
+
+</body>
+</html>
